@@ -4,19 +4,21 @@ import sys
 
 def read_human_schedule(filename):
   f = open(filename,'r')
-  names = f.read()
   scheduleDict = {}
   for line in f:
     tempLine = line.split()
-    scheduleDict[tempLine[0]] = tempLine[1:]
+    scheduleDict[tempLine[0]+' '+tempLine[1]] = tempLine[2:]
+  f.close()
+  print(scheduleDict)
 
 def read_day_schedule(filename):
   f = open(filename,'r')
-  days = f.read()
   scheduleDict = {}
   for line in f:
     tempLine = line.split()
     scheduleDict[tempLine[0]] = tempLine[1:]
+  f.close()
+  print(scheduleDict)
 
 
 
@@ -24,7 +26,8 @@ def main():
 
   human = sys.argv[1]
   day = sys.argv[2]
-  read_human_schedul(human)
-  iread_day_schedule(day)
+  read_human_schedule(human)
+  read_day_schedule(day)
+
 if __name__ == '__main__':
   main()
