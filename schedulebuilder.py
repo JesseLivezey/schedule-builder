@@ -1,6 +1,7 @@
 # Schedule Builder
 # 2012 Jesse Livezey
 import sys
+import schedulealg
 
 def read_human_schedule(filename):
   f = open(filename,'r')
@@ -28,6 +29,10 @@ def main():
   day = sys.argv[2]
   read_human_schedule(human)
   read_day_schedule(day)
+  schedule1 = schedulealg.fill_people(human,day)
+  schedule2 = schedulealg.fill_days(human,day)
+  print(schedule1.get_peopleSchedule())
+  print(schedule2.get_daysSchedule())
 
 if __name__ == '__main__':
   main()
