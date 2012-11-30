@@ -1,8 +1,14 @@
+import operator
 #Parent class for all scheduling algorithms
 class algorithm(object):
-  def __init__(self,daysSchedule,peopleSchedule):
-    self.daysSchedule = daysSchedule
-    self.peopleSchedule = peopleSchedule
+  def __init__(self):
+    pass
+    
+  def set_peopleSchedule(self,schedule):
+    self.peopleSchedule = schedule
+
+  def set_daysSchedule(self,schedule):
+    self.daysSchedule = schedule
 
   def get_daysSchedule(self):
     return self.daysSchedule
@@ -12,7 +18,12 @@ class algorithm(object):
 
 #Fill by constrained person heuristic
 class fill_people(algorithm):
-  pass
-
+  def make_schedule(self):
+    pass  
 class fill_days(algorithm):
-  pass
+  def make_schedule(self):
+    sortedDays = sorted(self.daysSchedule.iteritems(),key=operator.itemgetter(1),reverse=True)
+    print sortedDays
+    #sortedPeople = sorted(self.peopleSchedule.iteritems(),key = len(operator.itemgetter(1)),reverse = True)
+    #print 
+    #print sortedPeople
