@@ -2,3 +2,15 @@ schedule-builder
 ================
 
 Application will take a list of people with schedules and fill them into timeslots
+
+Format for a person's schedule is:
+Filename: FirstLast.txt
+First Last
+DDTT Pref (DayDayTimeTime Preference:1=not preferred and 3=preferred
+
+Example:
+JesseLivezey.txt
+Jesse Livezey
+MW08 3
+TR04 3
+WM12 1
