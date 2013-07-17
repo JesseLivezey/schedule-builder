@@ -2,6 +2,7 @@ schedule-builder
 ================
 
 Application will take a list of people with schedules and fill them into timeslots
+It will be very fancy.
 
 Format for a person's schedule is:
 Filename: FirstLast.txt
